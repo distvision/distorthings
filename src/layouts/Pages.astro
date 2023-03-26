@@ -1,0 +1,26 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+// type Props = CollectionEntry<"blog">["data"];
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body
+    class="m-auto p-5 max-w-[65ch] text-left bg-neutral-900 break-words leading-normal text-neutral-300"
+  >
+    <Header />
+    <main>
+      <hr class="bg-zinc-400 my-4" />
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
