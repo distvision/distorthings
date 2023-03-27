@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # pages that i dont what to show
 /about.astro
+/markdown-style-guide.md
+/using-mdx.mdx
