@@ -20,3 +20,5 @@ Because this is a blog, having to wait for the data to load didn't seam to me as
 Astro was actually really ease to learn, not like I'm an expert now or something, but just in few days doing the tutorial on Astro's website I already had a good understanding on how it works.
 
 Now I'm still learning it to improve this blog even more.
+
+Thank you.

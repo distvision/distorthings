@@ -22,7 +22,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <main>
       <article>
         <!-- {heroImage && <img width={720} height={360} src={heroImage} alt="" />} -->
-        <h1 class="mt-1">{title}</h1>
+        <h1 class="mt-1 text-2xl font-bold">{title}</h1>
         <FormattedDate date={pubDate} />
         {
           updatedDate && (
@@ -31,9 +31,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
             </div>
           )
         }
-        <hr class="bg-neutral-400 mt-4 mb-6" />
+        <hr class="bg-neutral-400 mt-4 mb-4" />
         <div
-          class="prose prose-neutral prose-base prose-headings:text-neutral-300 prose-h1:leading-none leading-normal prose-p:text-neutral-300 prose-code:text-violet-400 prose-em:text-neutral-300 prose-strong:text-neutral-300 prose-strong:font-bold prose-ul:text-neutral-300 prose-ol:text-neutral-300"
+          class="mt-6 prose prose-neutral prose-base prose-headings:text-neutral-300 prose-h1:leading-none leading-normal prose-p:text-neutral-300 prose-code:text-violet-400 prose-em:text-neutral-300 prose-strong:text-neutral-300 prose-strong:font-bold prose-ul:text-neutral-300 prose-ol:text-neutral-300"
         >
           <slot />
         </div>
