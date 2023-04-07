@@ -18,7 +18,7 @@ const { title, description } = Astro.props;
   >
     <Header />
     <main class="min-h-[70vh]">
-      <h1 class="text-2xl font-bold mb-5">Blog Posts</h1>
+      <h1 class="text-2xl font-bold mb-5">{title}</h1>
       <hr class="bg-zinc-400 my-4" />
       <slot />
     </main>
