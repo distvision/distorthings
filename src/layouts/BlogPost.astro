@@ -16,24 +16,24 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   </head>
 
   <body
-    class="m-auto p-5 max-w-[65ch] text-left bg-neutral-900 break-words leading-normal text-neutral-300"
+    class="m-auto text-left bg-neutral-900 break-words leading-normal text-neutral-300"
   >
-    <Header />
-    <main>
+    <header class="fixed w-full top-0">
+      <Header />
+    </header>
+    <main class="mt-28 px-6">
       <article>
         <!-- {heroImage && <img width={720} height={360} src={heroImage} alt="" />} -->
-        <h1 class="mt-1 text-2xl font-bold">{title}</h1>
         <FormattedDate date={pubDate} />
         {
           updatedDate && (
-            <div class="italic">
+            <div>
               Last updated on <FormattedDate date={updatedDate} />
             </div>
           )
         }
-        <hr class="bg-neutral-400 mt-4 mb-4" />
         <div
-          class="mt-6 prose prose-neutral prose-base prose-headings:text-neutral-300 prose-h1:leading-none leading-normal prose-p:text-neutral-300 prose-code:text-violet-400 prose-em:text-neutral-300 prose-strong:text-neutral-300 prose-strong:font-bold prose-ul:text-neutral-300 prose-ol:text-neutral-300"
+          class="mt-6 prose prose-neutral prose-h1:text-6xl prose-h2:text-4xl prose-headings:text-neutral-300 leading-normal prose-p:text-neutral-300 prose-code:text-violet-400 prose-em:text-neutral-300 prose-strong:text-neutral-300 prose-strong:font-bold prose-ul:text-neutral-300 prose-ol:text-neutral-300"
         >
           <slot />
         </div>

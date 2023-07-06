@@ -1,18 +1,137 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
+import type { HTMLAttributes } from "astro/types";
+import "flowbite";
 import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+
+type Props = HTMLAttributes<"button">;
 ---
 
-<header class="pb-5 flex justify-between items-center">
-  <h2 class="text-2xl font-bold capitalize text-neutral-600">
-    {SITE_TITLE}
-  </h2>
-  <nav class="flex justify-end gap-3 items-center">
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <!-- <HeaderLink href="/about">About</HeaderLink> -->
-    <HeaderLink href="https://github.com/distvision" target="_blank">
-      GitHub
-    </HeaderLink>
-  </nav>
-</header>
+<!-- <HeaderLink href="/about">About</HeaderLink> -->
+<nav class="border-gray-200 bg-neutral-900 sm:px-16 px-6 border-b-2 relative">
+  <div class="w-full">
+    <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-6"
+    >
+      <a href="
+      https:
+      flowbite.com
+      " class="flex items-center">
+        <img
+          src="https://flowbite.com/docs/images/logo.svg"
+          class="h-8 mr-3"
+          alt="Flowbite Logo"
+        />
+      </a>
+      <button
+        id="triggerEl"
+        type="button"
+        class="inline-flex items-center ml-3 sm:hidden"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path></svg
+        >
+      </button>
+    </div>
+
+    <!-- Target -->
+    <div
+      class="absolute h-screen inset-0 transform duration-700 -translate-y-full ease-in-out"
+      id="targetEl"
+    >
+      <div id="ani" class="sm:bg-inherit bg-neutral-900 w-full">
+        <div
+          class="sm:hidden max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6 border-b-2"
+        >
+          <a
+            href="
+        https:
+        flowbite.com
+        "
+            class="flex items-center"
+          >
+            <img
+              src="https://flowbite.com/docs/images/logo.svg"
+              class="h-8 mr-3"
+              alt="Flowbite Logo"
+            />
+          </a>
+          <button
+            id="triggerEl2"
+            type="button"
+            class="inline-flex items-center ml-3 text-2xl sm:hidden"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path></svg
+            >
+          </button>
+        </div>
+
+        <div
+          class="font-medium text-4xl flex flex-col sm:flex-row sm:gap-8 sm:bg-inherit w-[100%]"
+        >
+          <HeaderLink id="HeaderLink" href="/">Home</HeaderLink>
+          <HeaderLink id="HeaderLink2" href="/blog">Blog</HeaderLink>
+          <HeaderLink
+            id="HeaderLink3"
+            href="https://github.com/distvision"
+            target="_blank"
+          >
+            GitHub
+          </HeaderLink>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // set the target element that will be collapsed or expanded (eg. navbar menu)
+    const $targetEl: HTMLElement | null = document.getElementById("targetEl");
+
+    // optionally set a trigger element (eg. a button, hamburger icon)
+    const $triggerEl: HTMLElement | null = document.getElementById("triggerEl");
+
+    const $triggerEl2: HTMLElement | null =
+      document.getElementById("triggerEl2");
+
+    const $triggerEl3: HTMLElement | null =
+      document.getElementById("HeaderLink");
+    const $triggerEl4: HTMLElement | null =
+      document.getElementById("HeaderLink2");
+    const $triggerEl5: HTMLElement | null =
+      document.getElementById("HeaderLink3");
+
+    $triggerEl.addEventListener("click", () => {
+      $targetEl.classList.toggle("-translate-y-full");
+      // console.log("clicado1");
+    });
+    $triggerEl2.addEventListener("click", () => {
+      $targetEl.classList.toggle("-translate-y-full");
+      // console.log("clicado2");
+    });
+
+    $triggerEl3.addEventListener("click", () => {
+      $targetEl.classList.toggle("-translate-y-full");
+    });
+    $triggerEl4.addEventListener("click", () => {
+      $targetEl.classList.toggle("-translate-y-full");
+    });
+    $triggerEl5.addEventListener("click", () => {
+      $targetEl.classList.toggle("-translate-y-full");
+    });
+  </script>
+</nav>
