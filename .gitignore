@@ -24,3 +24,4 @@ pnpm-debug.log*
 /about.astro
 /markdown-style-guide.md
 /using-mdx.mdx
+/dump.md

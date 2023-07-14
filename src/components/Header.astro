@@ -1,6 +1,5 @@
 ---
 import type { HTMLAttributes } from "astro/types";
-import "flowbite";
 import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
 
@@ -8,10 +7,10 @@ type Props = HTMLAttributes<"button">;
 ---
 
 <!-- <HeaderLink href="/about">About</HeaderLink> -->
-<nav class="border-gray-200 bg-neutral-900 sm:px-16 px-6 border-b-2 relative">
-  <div class="w-full">
+<nav class="bg-neutral-500 px-6 fixed w-full">
+  <div class="w-full mx-auto">
     <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-6"
+      class="flex flex-wrap items-center justify-between mx-auto py-6 sm:hidden"
     >
       <a href="
       https:
@@ -29,26 +28,28 @@ type Props = HTMLAttributes<"button">;
         class="inline-flex items-center ml-3 sm:hidden"
       >
         <svg
-          class="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
           ><path
-            fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"></path></svg
+            fill="currentColor"
+            d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z"></path></svg
         >
       </button>
     </div>
 
     <!-- Target -->
     <div
-      class="absolute h-screen inset-0 transform duration-700 -translate-y-full ease-in-out"
+      class="absolute sm:static h-screen sm:h-0 inset-0 transform duration-700 -translate-y-full ease-in-out"
       id="targetEl"
     >
-      <div id="ani" class="sm:bg-inherit bg-neutral-900 w-full">
+      <div
+        id="ani"
+        class="bg-neutral-700 sm:bg-inherit w-full sm:flex sm:justify-between"
+      >
         <div
-          class="sm:hidden max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6 border-b-2"
+          class="flex flex-wrap items-center justify-between p-6 border-b-2 border-gray-200 sm:border-none"
         >
           <a
             href="
@@ -59,31 +60,29 @@ type Props = HTMLAttributes<"button">;
           >
             <img
               src="https://flowbite.com/docs/images/logo.svg"
-              class="h-8 mr-3"
+              class="h-8"
               alt="Flowbite Logo"
             />
           </a>
           <button
             id="triggerEl2"
             type="button"
-            class="inline-flex items-center ml-3 text-2xl sm:hidden"
+            class="inline-flex items-center ml-3 sm:hidden"
           >
             <svg
-              class="w-6 h-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               ><path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"></path></svg
+                fill="currentColor"
+                d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6L6.4 19Z"
+              ></path></svg
             >
           </button>
         </div>
 
-        <div
-          class="font-medium text-4xl flex flex-col sm:flex-row sm:gap-8 sm:bg-inherit w-[100%]"
-        >
+        <div class="font-medium text-4xl flex flex-col sm:flex-row sm:gap-8">
           <HeaderLink id="HeaderLink" href="/">Home</HeaderLink>
           <HeaderLink id="HeaderLink2" href="/blog">Blog</HeaderLink>
           <HeaderLink

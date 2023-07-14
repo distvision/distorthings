@@ -1,10 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import "flowbite";
-
-// type Props = CollectionEntry<"blog">["data"];
+import NewHeader from "../components/NewHeader.astro";
 
 const { title, description } = Astro.props;
 ---
@@ -15,16 +12,13 @@ const { title, description } = Astro.props;
   </head>
 
   <body
-    class="m-auto text-left bg-neutral-900 break-words leading-normal text-neutral-300"
+    class="m-auto text-left bg-neutral-900 break-words leading-normal text-neutral-300 relative"
   >
-    <header class="fixed w-full top-0">
-      <Header />
+    <header class="">
+      <NewHeader />
     </header>
-    <main class="mt-24">
-      <h1 class="text-2xl font-thin uppercase mb-5 py-6 text-center border-b-2">
-        {title}
-      </h1>
-      <div class="px-6">
+    <main class="mt-6 max-w-4xl mx-auto">
+      <div class="px-6 md:px-16">
         <slot />
       </div>
     </main>

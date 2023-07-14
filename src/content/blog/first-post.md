@@ -5,8 +5,6 @@ pubDate: "Mar 25 2023"
 # heroImage: "/placeholder-hero.jpg"
 ---
 
-## Using Astro over React/Next to build this blog.
-
 Before I decided to build this blog with Astro, I have never used or knew how Astro was.
 
 The only thing that make me choose Astro over other options were the recommendation from some people that I follow on YouTube and twitter.

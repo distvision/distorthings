@@ -1,0 +1,77 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+import ModalMenu from "./ModalMenu.astro";
+import Logo from "./Logo.astro";
+
+type Props = HTMLAttributes<"button">;
+---
+
+<nav class="flex w-full bg-neutral-900">
+  <div
+    id="targetEl"
+    class="w-full transform duration-700 -translate-y-full ease-in-out fixed"
+  >
+    <ModalMenu />
+  </div>
+  <div
+    class="flex justify-between w-full md:px-16 p-6 items-center border-b-2 border-neutral-400"
+  >
+    <div class="w-24">
+      <Logo />
+    </div>
+    <div
+      class="text-xl uppercase font-medium hidden md:flex items-center gap-6"
+    >
+      <HeaderLink id="HeaderLink" href="/">Home</HeaderLink>
+      <HeaderLink id="HeaderLink2" href="/blog">Blog</HeaderLink>
+      <HeaderLink
+        id="HeaderLink3"
+        href="https://github.com/distvision"
+        target="_blank"
+      >
+        GitHub
+      </HeaderLink>
+    </div>
+
+    <button
+      type="button"
+      id="triggerEl"
+      class="text-2xl md:hidden"
+      aria-label="Open navigation"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        ><path
+          fill="currentColor"
+          d="M3 18v-2h18v2H3Zm0-5v-2h18v2H3Zm0-5V6h18v2H3Z"></path></svg
+      ></button
+    >
+  </div>
+
+  <script>
+    // set the target element that will be collapsed or expanded (eg. navbar menu)
+    const $targetEl: HTMLElement | null = document.getElementById("targetEl");
+
+    // optionally set a trigger element (eg. a button, hamburger icon)
+    const $triggerEl: HTMLElement | null = document.getElementById("triggerEl");
+
+    const $triggerEl2: HTMLElement | null =
+      document.getElementById("triggerEl2");
+
+    const $triggerEl3: HTMLElement | null =
+      document.getElementById("HeaderLink");
+    const $triggerEl4: HTMLElement | null =
+      document.getElementById("HeaderLink2");
+    const $triggerEl5: HTMLElement | null =
+      document.getElementById("HeaderLink3");
+
+    $triggerEl.addEventListener("click", () => {
+      $targetEl.classList.toggle("-translate-y-full");
+      console.log("clicado1");
+    });
+  </script>
+</nav>
